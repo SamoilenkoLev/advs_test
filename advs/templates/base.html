@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Объявления</title>
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="{% url 'advs-list' %}">Список объявлений</a></li>
+            <li role="presentation"><a href="{% url 'admin:index' %}" target="_blank">Админка</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Объявления</h3>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

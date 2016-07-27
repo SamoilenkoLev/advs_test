@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2>{{ object.name }}</h2>
+<p><small class="text-muted">{{ object.date|date:"d.m.Y H:i"}}</small></p>
+<blockquote>{{ object.text }}</blockquote>
+
+<a href="{% url 'advs-list' %}">&laquo; вернуться к списку</a>
+
+{% endblock %}

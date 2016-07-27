@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Advs(models.Model):
@@ -12,3 +13,6 @@ class Advs(models.Model):
     class Meta:
         verbose_name = 'Объявление'
         verbose_name_plural = 'Объявления'
+
+    def get_absolute_url(self):
+        return reverse('advs-detail', kwargs={'pk': self.pk})

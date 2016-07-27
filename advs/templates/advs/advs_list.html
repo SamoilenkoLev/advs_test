@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<p><a href="{% url 'admin:advs_advs_add' %}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus-sign"></i> добавить</a></p>
+
+{% for object in object_list %}
+  <h4><small class="text-muted">{{ object.date|date:"d.m.Y H:i"}}</small> <a href="{{ object.get_absolute_url }}">{{ object.name }}</a></h4>
+  <blockquote>{{ object.text|truncatewords:"5" }} <a href="{{ object.get_absolute_url }}">подробнее</a></blockquote>
+{% empty %}
+  <div class="alert alert-info">Пока нет объявлений...</div>
+{% endfor %}
+
+{% endblock %}
